@@ -1,0 +1,17 @@
+{
+    "name": "pi3a/agendamento_consultas",
+    "description": "Aplicação desenvolvida para a disciplina de Projeto Integrador III-A em PHP e MySQL.",
+    "authors": [
+        {
+            "name": "Fabio Silva Dias",
+            "email": "fabio.dias@sou.ucpel.edu.br"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Classes\\": "../../class",
+            "Models\\": "../../model"
+        }
+    }
+}
