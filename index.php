@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Agendamento de Consultas</title>
+    <link rel="stylesheet" href="<?php echo DIRPAGE.'lib/css/style.css';?>">
+    <link rel="stylesheet" href="<?php echo DIRPAGE.'lib/js/FullCalendar/main.min.css';?>">
 </head>
 <body>
 
-<?php
-    $objeto=new Classes\ClassTeste();
-?>
-
+    <div class="calendar"></div>
+    <script src="<?php echo DIRPAGE.'lib/js/FullCalendar/main.min.js';?>"></script>
+    <script src="<?php echo DIRPAGE.'lib/js/javascript.js';?>"></script>
 </body>
 </html>
