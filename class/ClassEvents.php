@@ -26,5 +26,26 @@
             $b->bindParam(6, $end, \PDO::PARAM_STR);
             $b->execute();
         }
+
+        #Buscar eventos pelo id
+        public function getEventsById($id)
+        {
+            $b=$this->conectDB()->prepare("select * from events where id=?");
+            $b->bindParam(1, $id, \PDO::PARAM_INT);
+            $b->execute();
+            return $f=$b->fetch(\PDO::FETCH_ASSOC);
+        }
+
+
+        #Update no banco de dados
+        public function updateEvent($id,$title,$description,$start)
+        {
+            $b=$this->conectDB()->prepare("update events set title=?, description=?, start=? where id=?");
+            $b->bindParam(1, $title, \PDO::PARAM_STR);
+            $b->bindParam(2, $description, \PDO::PARAM_STR);
+            $b->bindParam(3, $start, \PDO::PARAM_STR);
+            $b->bindParam(4, $id, \PDO::PARAM_INT);
+            $b->execute();
+        }
     }
 ?>
