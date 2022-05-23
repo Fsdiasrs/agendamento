@@ -55,5 +55,15 @@
             $b->bindParam(1, $id, \PDO::PARAM_INT);
             $b->execute();
         }
+
+        #Atualização de data hora pelo arraste e redimensionamento
+        public function updateDropEvent($id,$start,$end)
+        {
+            $b=$this->conectDB()->prepare("update events set start=?, end=? where id=?");
+            $b->bindParam(1, $start, \PDO::PARAM_STR);
+            $b->bindParam(2, $end, \PDO::PARAM_STR);
+            $b->bindParam(3, $id, \PDO::PARAM_INT);
+            $b->execute();
+        }
     }
 ?>
