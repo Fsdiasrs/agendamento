@@ -11,7 +11,8 @@
     "autoload": {
         "psr-4": {
             "Classes\\"   : "../../class",
-            "Models\\"    : "../../model"
+            "Models\\"    : "../../model",
+            "Traits\\"    : "../../traits"
         }
     }
 }

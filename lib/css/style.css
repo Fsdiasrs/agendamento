@@ -10,3 +10,39 @@
     margin        : 30px auto;
     height        : 80vh;
 }
+
+.cadastro{
+    float: left;
+    width: 90%;
+    margin:15px 5%;
+}
+
+#btn-cad{
+    display: flex;
+    height: 40px;
+    align-content: center;
+}
+
+@media screen and (max-width: 480px){
+
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px){
+    
+}
+
+@media screen and (min-width: 769px) and (max-width: 1199px){
+    
+}
+
+@media screen and (min-width: 1200px){
+    .container .fundo{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('/img/fundoL.jpg') center center no-repeat;
+        background-size: cover;
+    }
+}
