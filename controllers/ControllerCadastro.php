@@ -1,9 +1,7 @@
 <?php
 
-$validate = new Classes\ClassValidate();
-
-
-$validate->ValidateFields($_POST);
+$validate=new Classes\ClassValidate();
+$validate->validateFields($_POST);
 var_dump($validate->getErro());
 
 ?>
