@@ -19,6 +19,15 @@
 
 .center{text-align: center;}
 
+.cadastro{width: 60%; margin: 15px 20%;}
+
+.topFaixa{height: 50px; background: #025158; font-weight: bold; color: #fff; line-height: 50px;}
+
+/*Extra-small*/
+.cadastro{width: 90%; margin: 15px 5%;}
+
+/*Small*/
+.cadastro{width: 80%; margin: 15px 10%;}
 
 /*Configurações Gerais*/
 .calendarUser, .calendarManager{
@@ -31,11 +40,6 @@
     float: left;
     width: 90%;
     margin:15px 5%;
-}
-
-#btn-cad{
-    display: flex;
-    align-content: center;
 }
 
 
@@ -119,7 +123,6 @@ input[type='submit']:hover{
 }
 
 
-
 /*Medium*/
 @media screen and (min-width: 769px) and (max-width: 1199px){
    
@@ -127,3 +130,4 @@ input[type='submit']:hover{
         width: 60%;
     }    
 }
+
