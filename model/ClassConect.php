@@ -1,7 +1,7 @@
 <?php
     namespace Models;
 
-    abstract class ModelConect
+    abstract class ClassConect
     {
         protected function conectDB()
         {

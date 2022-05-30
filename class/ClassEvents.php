@@ -1,9 +1,9 @@
 <?php
     namespace Classes;
 
-    use Models\ModelConect;
+    use Models\ClassConect;
 
-    class ClassEvents extends ModelConect
+    class ClassEvents extends ClassConect
     {
         #Trazer os dados de eventos do banco
         public function getEvents()
@@ -64,27 +64,6 @@
             $b->bindParam(2, $end, \PDO::PARAM_STR);
             $b->bindParam(3, $id, \PDO::PARAM_INT);
             $b->execute();
-        }
-
-        #Criação da COnta de usuário
-        public function createAccount($id=0,$nome,$email,$login,$password)
-        {
-            $b=$this->conectDB()->prepare("insert into events values (?,?,?,?,?)");
-            $b->bindParam(1, $id, \PDO::PARAM_INT);
-            $b->bindParam(2, $nome, \PDO::PARAM_STR);
-            $b->bindParam(3, $email, \PDO::PARAM_STR);
-            $b->bindParam(4, $login, \PDO::PARAM_STR);
-            $b->bindParam(5, $password, \PDO::PARAM_STR);
-            $b->execute();
-        }
-
-        #Buscar Account pelo id
-        public function getuserById($id)
-        {
-            $b=$this->conectDB()->prepare("select * from events where id=?");
-            $b->bindParam(1, $id, \PDO::PARAM_INT);
-            $b->execute();
-            return $f=$b->fetch(\PDO::FETCH_ASSOC);
         }
     }
 ?>

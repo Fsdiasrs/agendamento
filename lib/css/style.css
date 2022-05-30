@@ -1,3 +1,4 @@
+/*sistema*/
 *{
     margin        : 0;
     padding       : 0;
@@ -5,6 +6,21 @@
     font-family   : Arial, Helvetica, sans-serif;
 }
 
+.container a{
+    text-decoration: none;
+    color: #333;
+}
+
+
+/*Classes auxiliares*/
+.float{float: left;}
+.w100{width: 100%;}
+.h40{height: 40px;}
+
+.center{text-align: center;}
+
+
+/*Configurações Gerais*/
 .calendarUser, .calendarManager{
     width         : 80%;
     margin        : 30px auto;
@@ -19,30 +35,95 @@
 
 #btn-cad{
     display: flex;
-    height: 40px;
     align-content: center;
 }
 
+
+input[type = 'email'] , input[type = 'password']{
+    height: 40px;
+    margin: 15px 0;
+    border: 1px solid #bbb;
+    border-radius: 2px;
+    font-size: 16px;
+    padding: 0 10px;
+}
+
+input[type='submit']{
+    width: 40%;
+    background: #7fc8d9;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+input[type='submit']:hover{
+    opacity: 0.8;
+}
+
+.container .fundo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/agendamento/img/fundoL.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+.container .login{
+    position: absolute;
+    width: 40%;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 30px;
+}
+
+.container .login .loginFormulario .loginTextos{
+    width: 60%;
+    font-weight: bold;
+    line-height: 40px;
+
+}
+
+/*Extra small*/
 @media screen and (max-width: 480px){
-
-}
-
-@media screen and (min-width: 481px) and (max-width: 768px){
-    
-}
-
-@media screen and (min-width: 769px) and (max-width: 1199px){
-    
-}
-
-@media screen and (min-width: 1200px){
-    .container .fundo{
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url('/img/fundoL.jpg') center center no-repeat;
-        background-size: cover;
+    input[type='submit']{
+        width: 70%;
     }
+    
+    .container .login{
+        width: 90%;
+    }
+    .container .login .loginFormulario .loginTextos{
+        width: 100%;
+        margin-top: 10px;
+        text-align: left;
+    }
+}
+
+/*Small*/
+@media screen and (min-width: 481px) and (max-width: 768px){
+   
+    .container .login{
+        width: 50%;
+    }
+
+    .container .login .loginFormulario .loginTextos{
+        width: 50%;
+    }
+}
+
+
+
+/*Medium*/
+@media screen and (min-width: 769px) and (max-width: 1199px){
+   
+    .container .login{
+        width: 60%;
+    }    
 }
