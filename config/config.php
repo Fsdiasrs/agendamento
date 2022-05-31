@@ -16,3 +16,4 @@ define('PASS','');
 
 #Incluir arquivos
 include(DIRREQ.'lib/composer/vendor/autoload.php');
+include(DIRREQ.'helpers/variables.php');

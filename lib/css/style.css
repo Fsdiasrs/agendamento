@@ -6,7 +6,7 @@
     font-family   : Arial, Helvetica, sans-serif;
 }
 
-.container a{
+.loginFormulario a{
     text-decoration: none;
     color: #333;
 }
@@ -19,15 +19,15 @@
 
 .center{text-align: center;}
 
-.cadastro{width: 60%; margin: 15px 20%;}
+.cadastro input{width: 60%; margin: 15px 20%;}
 
 .topFaixa{height: 50px; background: #025158; font-weight: bold; color: #fff; line-height: 50px;}
 
 /*Extra-small*/
-.cadastro{width: 90%; margin: 15px 5%;}
+.cadastro input{width: 90%; margin: 15px 5%;}
 
 /*Small*/
-.cadastro{width: 80%; margin: 15px 10%;}
+.cadastro input{width: 80%; margin: 15px 10%;}
 
 /*Configurações Gerais*/
 .calendarUser, .calendarManager{
@@ -43,7 +43,7 @@
 }
 
 
-input[type = 'email'] , input[type = 'password']{
+.loginFormulario input[type = 'email'], .loginFormulario input[type = 'password']{
     height: 40px;
     margin: 15px 0;
     border: 1px solid #bbb;
@@ -53,8 +53,8 @@ input[type = 'email'] , input[type = 'password']{
 }
 
 input[type='submit']{
-    width: 40%;
-    background: #7fc8d9;
+    width: 60%;
+    background: #025158;
     font-weight: bold;
     color: #fff;
     border: none;
@@ -66,7 +66,7 @@ input[type='submit']:hover{
     opacity: 0.8;
 }
 
-.container .fundo{
+ .fundo{
     position: absolute;
     top: 0;
     left: 0;
@@ -76,7 +76,7 @@ input[type='submit']:hover{
     background-size: cover;
 }
 
-.container .login{
+.login{
     position: absolute;
     width: 40%;
     top: 50%;
@@ -87,7 +87,7 @@ input[type='submit']:hover{
     padding: 30px;
 }
 
-.container .login .loginFormulario .loginTextos{
+.login .loginFormulario .loginTextos{
     width: 60%;
     font-weight: bold;
     line-height: 40px;
@@ -100,10 +100,10 @@ input[type='submit']:hover{
         width: 70%;
     }
     
-    .container .login{
+     .login{
         width: 90%;
     }
-    .container .login .loginFormulario .loginTextos{
+     .login .loginFormulario .loginTextos{
         width: 100%;
         margin-top: 10px;
         text-align: left;
@@ -113,11 +113,11 @@ input[type='submit']:hover{
 /*Small*/
 @media screen and (min-width: 481px) and (max-width: 768px){
    
-    .container .login{
+     .login{
         width: 50%;
     }
 
-    .container .login .loginFormulario .loginTextos{
+     .login .loginFormulario .loginTextos{
         width: 50%;
     }
 }
@@ -126,7 +126,7 @@ input[type='submit']:hover{
 /*Medium*/
 @media screen and (min-width: 769px) and (max-width: 1199px){
    
-    .container .login{
+     .login{
         width: 60%;
     }    
 }
