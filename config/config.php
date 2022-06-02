@@ -19,5 +19,5 @@ include(DIRREQ.'lib/composer/vendor/autoload.php');
 include(DIRREQ.'helpers/variables.php');
 
 #Outras Informações
-define("SITEKEY","6LfQaTwgAAAAADFc8lF4S2E8Uuqyk49v_L23BSgM");
-define("SECRETKEY","6LfQaTwgAAAAAJ_X469BcWWEDhQjcFENJhlI3IQJ");
+define("SITEKEY","6Lds3TwgAAAAAKNQPC4xw0neFIBTlQxdV70gqZt5");
+define("SECRETKEY","6Lds3TwgAAAAAJ4COSMW0wRcnfeAG1bqPlxhLm1V");

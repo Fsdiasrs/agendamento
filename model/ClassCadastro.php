@@ -44,7 +44,6 @@
             );
             return $r=$b->rowCount();
         }
-
     }
 
 ?>

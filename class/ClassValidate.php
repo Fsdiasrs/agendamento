@@ -7,6 +7,7 @@
 
         private $erro         = [];
         private $cadastro;
+        private $reCaptcha;
 
         public function __construct()
         {
@@ -150,8 +151,21 @@
         }
 
         #Validação final do cadastro
-        public function validateFinalCad($arrVar){
-            $this->cadastro->insertCad($arrVar);
+        public function validateFinalCad($arrVar)
+        {
+            if(count($this->getErro())>0){
+                $arrResponse=[
+                    "retorno"=>"erro",
+                    "erros"=>$this->getErro()
+                ];
+            }else{
+                $arrResponse=[
+                    "retorno"=>"success",
+                    "erros"=>null
+                ];
+                /*$this->cadastro->insertCad($arrVar);*/
+            }
+            return json_encode($arrResponse);
         }
     }
 ?>
