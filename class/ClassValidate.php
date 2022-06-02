@@ -137,6 +137,18 @@
 
         }
 
+        #Verificar se o captcha está correto
+        public function validateCaptcha($captcha,$score=0.5)
+        {
+            $return=file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".SECRETKEY."&response={$captcha}");
+            $response=json_decode($return);
+            if($response->success == true && $response->score >= $score){
+                return true;
+            }else{
+                $this->setErro("Captcha Inválido! Atualize a página e tente novamente.");
+            }
+        }
+
         #Validação final do cadastro
         public function validateFinalCad($arrVar){
             $this->cadastro->insertCad($arrVar);

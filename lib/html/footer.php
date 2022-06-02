@@ -1,5 +1,4 @@
 
-    <script src='https://www.google.com/recaptcha/api.js?render=".SITEKEY."'></script>
     <script src               = "<?php echo DIRPAGE.'lib/js/FullCalendar/main.min.js';?>"></script>
     <script src               = "<?php echo DIRPAGE.'lib/js/JavaScript/script.js';?>"></script>
     <script>

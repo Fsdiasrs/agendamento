@@ -16,6 +16,7 @@
 .float{float: left;}
 .w100{width: 100%;}
 .h40{height: 40px;}
+.h30{height: 30px;}
 
 .center{text-align: center;}
 
@@ -51,6 +52,7 @@
     font-size: 16px;
     padding: 0 10px;
 }
+
 
 input[type='submit']{
     width: 60%;

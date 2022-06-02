@@ -13,6 +13,7 @@
             <input class="float w100 h40" type="text" id="dataNascimento" name="dataNascimento" placeholder="Data de nascimento:" required>
             <input class="float w100 h40" type="password" id="senha" name="senha" placeholder="Senha:" required>
             <input class="float w100 h40" type="password" id="senhaConf" name="senhaConf" placeholder="Confirmação da senha:" required>
+            <!--<input class="float w100 h40" type="hidden" id="g-recaptcha-response" name="g-recaptcha-response" required> -->
             <input class="inlineBlock h40" type="submit" value="Cadastrar">
         </div>
     </form>

@@ -8,6 +8,7 @@ $validate->validateData($dataNascimento);
 $validate->validateCpf($cpf);
 $validate->validateConfSenha($senha, $senhaConf);
 $validate->validateStrongSenha($senha);
+$validate->validateCaptcha($gRecaptchaResponse);
 var_dump($validate->getErro());
 /*$validate->validateFinalCad($arrVar);*/
 ?>

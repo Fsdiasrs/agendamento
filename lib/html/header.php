@@ -12,7 +12,6 @@
     <script src         = "https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <script src         = "https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
     <link rel           = "stylesheet" href="<?php echo DIRPAGE.'lib/js/FullCalendar/main.min.css';?>">
+    <script src         = "https://www.google.com/recaptcha/api.js?hl=pt-BR"></script>
 </head>
 <body>
-
-    
