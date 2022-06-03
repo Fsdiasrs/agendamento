@@ -175,6 +175,22 @@
             }
         }
 
+        #Método de validação de confirmação do cadastro
+        public function validateUserActive($email){
+            $user=$this->login->getDataUser($email);
+            if ($user["data"]["status"] == "confirmation") {
+                #se a data de criação do cadastro <= a data atual - 5 dias
+                if (strtotime($user["data"]["dataCriacao"])<= strtotime(date("Y-m-d H:i:s"))-432000) {
+                    $this->setErro("Ative seu cadastro pelo link do email!");
+                    return false;
+                } else {
+                    return true;
+                }  
+            } else {
+                return true;
+            }
+        }
+
         #Validação final do cadastro
         public function validateFinalCad($arrVar)
         {
