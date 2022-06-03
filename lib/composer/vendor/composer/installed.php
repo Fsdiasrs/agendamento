@@ -1,11 +1,11 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => 'dev-main',
-        'version' => 'dev-main',
+        'pretty_version' => '1.0.0+no-version-set',
+        'version' => '1.0.0.0',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '4c74c081ed9a646ef34830d943a4a84908f8d497',
+        'reference' => NULL,
         'name' => 'pi3a/agendamento_consultas',
         'dev' => true,
     ),
@@ -20,12 +20,12 @@
             'dev_requirement' => false,
         ),
         'pi3a/agendamento_consultas' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
+            'pretty_version' => '1.0.0+no-version-set',
+            'version' => '1.0.0.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '4c74c081ed9a646ef34830d943a4a84908f8d497',
+            'reference' => NULL,
             'dev_requirement' => false,
         ),
         'symfony/polyfill-mbstring' => array(
