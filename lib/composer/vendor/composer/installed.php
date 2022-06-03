@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '5665b672ee866a87870861868896b3029708de9f',
+        'reference' => '4c74c081ed9a646ef34830d943a4a84908f8d497',
         'name' => 'pi3a/agendamento_consultas',
         'dev' => true,
     ),
@@ -25,7 +25,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '5665b672ee866a87870861868896b3029708de9f',
+            'reference' => '4c74c081ed9a646ef34830d943a4a84908f8d497',
             'dev_requirement' => false,
         ),
         'symfony/polyfill-mbstring' => array(

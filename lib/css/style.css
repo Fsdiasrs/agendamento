@@ -53,7 +53,7 @@
     padding: 0 10px;
 }
 
-
+/*Configurações Gerais*/
 input[type='submit']{
     width: 60%;
     background: #025158;
@@ -94,6 +94,13 @@ input[type='submit']:hover{
     font-weight: bold;
     line-height: 40px;
 
+}
+
+.resultadoForm{
+    margin-top: 20px;
+    font-weight: bold;
+    color: red;
+    line-height: 20px;
 }
 
 /*Extra small*/

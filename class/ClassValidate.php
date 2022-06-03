@@ -218,10 +218,31 @@
         {
             if(count($this->getErro()) >0){
                 $this->login->insertAttempt();
+
+                $arrResponse=[
+                    "retorno"=>"erro",
+                    "erros"=>$this->getErro(),
+                    "tentativas"=>$this->tentativas
+                ];
+
             }else{
                 $this->login->deleteAttempt();
                 $this->session->setSessions($email);
+                if ($_SESSION['permition']=="user") {
+                    $arrResponse=[
+                        "retorno"=>"success",
+                        "page"=>'user/index',
+                        "tentativas"=>$this->tentativas
+                    ];
+                } else {
+                    $arrResponse=[
+                        "retorno"=>"success",
+                        "page"=>'manager/index',
+                        "tentativas"=>$this->tentativas
+                    ];
+                }
             }
+            return json_encode($arrResponse);
         }
     }
 ?>

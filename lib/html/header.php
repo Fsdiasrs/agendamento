@@ -1,9 +1,3 @@
-<?php
-    use Classes\ClassSessions;
-    $session=new ClassSessions();
-    $session->verifyInsideSession();
-?>
-
 <!doctype html>
 <html lang              = "pt-br">
 <head>

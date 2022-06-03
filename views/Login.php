@@ -9,6 +9,9 @@
             <div class          = "loginLogomarca float w100 center">
                 <img src        = "<?php echo DIRPAGE.'img/LogomarcaHUSFP.png'; ?>" alt="Logomarca HUSFP">
             </div>
+
+            <div class          = "resultadoForm float w100 center"></div>
+            
             <div class          = "loginFormulario float w100">
                 <input class    = "float w100 h40" type="email" name="email" placeholder="Email:" id="email" require>
                 <input class    = "float w100 h40" type="password" name="senha" placeholder="Senha:" id="password" require>

@@ -9,6 +9,5 @@
     $validate->validateCaptcha($gRecaptchaResponse);
     $validate->validateUserActive($email);
     $validate->validateAttemptLogin();
-    $validate->validateFinalLogin($email);
-    echo "<script>window.location.href='".DIRPAGE."views/areaRestrita';</script>";
+    echo $validate->validateFinalLogin($email);
 ?>
