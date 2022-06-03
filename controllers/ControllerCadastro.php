@@ -9,7 +9,7 @@ $validate->validateCpf($cpf);
 $validate->validateConfSenha($senha, $senhaConf);
 $validate->validateStrongSenha($senha);
 $validate->validateCaptcha($gRecaptchaResponse);
-$validate->validateFinalCad($arrVar);
+echo $validate->validateFinalCad($arrVar);
 /*var_dump($validate->getErro());*/
-/*$validate->validateFinalCad($arrVar);*/
+$validate->validateFinalCad($arrVar);
 ?>

@@ -2,16 +2,18 @@
     namespace Classes;
     use Models\ClassCadastro;
     use ZxcvbnPhp\Zxcvbn;
+    use Classes\ClassPassword;
 
     class ClassValidate{
 
-        private $erro         = [];
+        private $erro                                       = [];
         private $cadastro;
-        private $reCaptcha;
+        private $password;
 
         public function __construct()
         {
-            $this->cadastro   = new ClassCadastro();
+            $this->cadastro                                 = new ClassCadastro();
+            $this->password                                 = new ClassPassword();
         }
 
         public function getErro()
@@ -27,7 +29,7 @@
         #Validar se os campos desejados foram preenchidos
         public function validateFields($par)
         {
-            $i                = 0;
+            $i                                              = 0;
             foreach ($par as $key => $value){
                 if(empty($value)){
                     $i++;
@@ -52,9 +54,9 @@
         }
 
         #Validar se o email existe no banco de dados (action null para cadastro)
-        public function validateIssetEmail($email,$action=null)
+        public function validateIssetEmail($email,$action   = null)
         {
-            $b=$this->cadastro->getIssetEmail($email);
+            $b                                              = $this->cadastro->getIssetEmail($email);
 
             if($action==null){
                 if($b > 0){
@@ -75,7 +77,7 @@
 
         #Validação se o dado é uma data
         public function validateData($par){
-            $data             = \DateTime::createFromFormat("d/m/Y",$par);
+            $data                                           = \DateTime::createFromFormat("d/m/Y",$par);
             if (($data) && ($data->format("d/m/Y")===$par)) {
                 return true;
             } else {
@@ -87,22 +89,22 @@
         #Validação se é um cpf real
         public function validateCpf($par)
         {
-            $cpf              = preg_replace('/[^0-9]/', '', (string) $par);
+            $cpf                                            = preg_replace('/[^0-9]/', '', (string) $par);
             if (strlen($cpf) != 11){
                 $this->setErro("Cpf Inválido!");
                 return false;
             }
             for ($i = 0, $j = 10, $soma = 0; $i < 9; $i++, $j--)
-                $soma         += $cpf[$i] * $j;
-                $resto        = $soma % 11;
+                $soma                                       += $cpf[$i] * $j;
+                $resto                                      = $soma % 11;
             if ($cpf[9] != ($resto < 2 ? 0 : 11 - $resto))
             {
                 $this->setErro("Cpf Inválido!");
                 return false;
             }
             for ($i = 0, $j = 11, $soma = 0; $i < 10; $i++, $j--)
-                $soma         += $cpf[$i] * $j;
-                $resto        = $soma % 11;
+                $soma                                       += $cpf[$i] * $j;
+                $resto                                      = $soma % 11;
                 return $cpf[10] == ($resto < 2 ? 0 : 11 - $resto);
         }
 
@@ -117,10 +119,10 @@
         }
 
         #Verificar a força da senha
-        public function validateStrongSenha($senha,$par=null)
+        public function validateStrongSenha($senha,$par     = null)
         {
-            $zxcvbn=new Zxcvbn();
-            $strength = $zxcvbn->passwordStrength($senha);
+            $zxcvbn                                         = new Zxcvbn();
+            $strength                                       = $zxcvbn->passwordStrength($senha);
 
             if($par==null){
                 if($strength['score'] >= 3){
@@ -133,16 +135,22 @@
             }
         }
         
-        #Verificação da senha digitada com hash no banco de dados
-        public function validateSenha($email, $senha){
-
+        #Verificação da senha digitada com o hash no banco de dados
+        public function validateSenha($email,$senha)
+        {
+            if($this->password->verifyHash($email,$senha)){
+                return true;
+            }else{
+                $this->setErro("Usuário ou Senha Inválidos!");
+                return false;
+            }
         }
 
         #Verificar se o captcha está correto
-        public function validateCaptcha($captcha,$score=0.5)
+        public function validateCaptcha($captcha,$score     = 0.5)
         {
-            $return=file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".SECRETKEY."&response={$captcha}");
-            $response=json_decode($return);
+            $return                                         = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".SECRETKEY."&response={$captcha}");
+            $response                                       = json_decode($return);
             if($response->success == true && $response->score >= $score){
                 return true;
             }else{
@@ -163,7 +171,7 @@
                     "retorno"=>"success",
                     "erros"=>null
                 ];
-                /*$this->cadastro->insertCad($arrVar);*/
+                $this->cadastro->insertCad($arrVar);
             }
             return json_encode($arrResponse);
         }
