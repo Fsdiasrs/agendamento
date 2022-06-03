@@ -22,8 +22,8 @@ class ClassCrud extends ClassConect{
     }
 
     #delete de dados
-    public function deletetDB($table, $where, $exec){
-        $this->prepareExecute("delete from {$table} where id={$where}",$exec);
+    public function deleteDB($table, $where, $exec){
+        $this->prepareExecute("delete from {$table} where {$where}",$exec);
         return $this->crud;
     }
 

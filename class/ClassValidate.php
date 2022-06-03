@@ -3,17 +3,21 @@
     use Models\ClassCadastro;
     use ZxcvbnPhp\Zxcvbn;
     use Classes\ClassPassword;
+    use Models\ClassLogin;
 
     class ClassValidate{
 
         private $erro                                       = [];
         private $cadastro;
         private $password;
+        private $login;
+        private $tentativas;
 
         public function __construct()
         {
-            $this->cadastro                                 = new ClassCadastro();
-            $this->password                                 = new ClassPassword();
+            $this->cadastro=new ClassCadastro();
+            $this->password=new ClassPassword();
+            $this->login=new ClassLogin();
         }
 
         public function getErro()
@@ -158,6 +162,19 @@
             }
         }
 
+        #Validação das tentativas
+        public function validateAttemptLogin()
+        {
+            if($this->login->countAttempt() >= 5){
+                $this->setErro("Você realizou mais de 5 tentativas!");
+                $this->tentativas=true;
+                return false;
+            }else{
+                $this->tentativas=false;
+                return true;
+            }
+        }
+
         #Validação final do cadastro
         public function validateFinalCad($arrVar)
         {
@@ -174,6 +191,16 @@
                 $this->cadastro->insertCad($arrVar);
             }
             return json_encode($arrResponse);
+        }
+
+        #Validação final do login
+        public function validateFinalLogin($email)
+        {
+            if(count($this->getErro()) >0){
+                $this->login->insertAttempt();
+            }else{
+                $this->login->deleteAttempt();
+            }
         }
     }
 ?>
