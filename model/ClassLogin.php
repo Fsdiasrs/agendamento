@@ -1,6 +1,7 @@
 <?php
 namespace Models;
 use Traits\TraitGetIp;
+
 class ClassLogin extends ClassCrud{
 
     private $trait;
@@ -79,4 +80,6 @@ class ClassLogin extends ClassCrud{
             )
         );
     }
+
+    
 }

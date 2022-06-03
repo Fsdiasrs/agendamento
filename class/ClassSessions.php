@@ -1,6 +1,7 @@
 <?php
 namespace Classes;
 use Models;
+use Traits\TraitGetIp;
 
 class ClassSessions{
 
@@ -30,13 +31,32 @@ class ClassSessions{
     #Proteger contra roubo de sessão
     public function setSessionCanary($par=null)
     {
-
+        session_regenerate_id(true);
+        if($par == null){
+            $_SESSION['canary']=[
+                "birth"=>time(),
+                "IP"=>TraitGetIp::getUserIp()
+            ];
+        }else{
+            $_SESSION['canary']['birth']=time();
+        }
     }
 
     #Verificar a integridade da sessão
     public function verifyIdSessions()
     {
+        if(!isset($_SESSION['canary'])){
+            $this->setSessionCanary();
+        }
 
+        if ($_SESSION['canary']['IP'] !== TraitGetIp::getUserIp()) {
+            $this->destructSessions();
+            $this->setSessionCanary();
+        }
+
+        if ($_SESSION['canary']['birth'] < time() - $this->timeCanary) {
+            $this->setSessionCanary("time");
+        }
     }
 
     #Setar as sessões do nosso sistema
@@ -53,6 +73,35 @@ class ClassSessions{
     #Validar as páginas internas do sistema
     public function verifyInsideSession()
     {
+        $this->verifyIdSessions();
+        if (!isset($_SESSION['login']) || !isset($_SESSION['permition']) || !isset($_SESSION['canary'])) {
+            $this->destructSessions();
+            echo"
+                <script>
+                    alert('Você não está logado');
+                    window.location.href='".DIRPAGE."views/login';
+                </script>
+            ";
+        } else {
+            if ($_SESSION['time'] >= time()- $this->timeSession) {
+                $_SESSION['time']=time();
+            } else{
+                $this->destructSessions();
+                echo"
+                <script>
+                    alert('Sua sessão expirou. Faça login novamente!');
+                    window.location.href='".DIRPAGE."views/login';
+                </script>
+            ";
+            }
+        }
+        
+    }
 
+    #Destruir as sessions existentes
+    public function destructSessions(){
+        foreach (array_keys($_SESSION) as $key) {
+            unset($_SESSION['key']);
+        }
     }
 }
