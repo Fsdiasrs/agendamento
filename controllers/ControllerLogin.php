@@ -10,5 +10,4 @@
     $validate->validateUserActive($email);
     $validate->validateAttemptLogin();
     $validate->validateFinalLogin($email);
-    var_dump($validate->getErro());
 ?>

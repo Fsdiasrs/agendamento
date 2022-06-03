@@ -21,3 +21,4 @@ include(DIRREQ.'helpers/variables.php');
 #Outras Informações
 define("SITEKEY","6Lds3TwgAAAAAKNQPC4xw0neFIBTlQxdV70gqZt5");
 define("SECRETKEY","6Lds3TwgAAAAAJ4COSMW0wRcnfeAG1bqPlxhLm1V");
+define("DOMAIN",$_SERVER["HTTP_HOST"]);

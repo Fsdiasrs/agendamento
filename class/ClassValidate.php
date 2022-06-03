@@ -1,9 +1,11 @@
 <?php
     namespace Classes;
+
     use Models\ClassCadastro;
     use ZxcvbnPhp\Zxcvbn;
     use Classes\ClassPassword;
     use Models\ClassLogin;
+    use Classes\ClassSessions;
 
     class ClassValidate{
 
@@ -12,12 +14,14 @@
         private $password;
         private $login;
         private $tentativas;
-
+        private $session;
+        
         public function __construct()
         {
             $this->cadastro=new ClassCadastro();
             $this->password=new ClassPassword();
             $this->login=new ClassLogin();
+            $this->session=new ClassSessions();
         }
 
         public function getErro()
@@ -216,6 +220,7 @@
                 $this->login->insertAttempt();
             }else{
                 $this->login->deleteAttempt();
+                $this->session->setSessions($email);
             }
         }
     }
