@@ -18,7 +18,13 @@ define('PASS','');
 include(DIRREQ.'lib/composer/vendor/autoload.php');
 include(DIRREQ.'helpers/variables.php');
 
+#Informações do servidor de email
+define("HOSTNAME","smtp.gmail.com");
+define("USERMAIL","testemail.testeemail@gmail.com");
+define("PASSMAIL","t3st33m41l");
+
 #Outras Informações
 define("SITEKEY","6Lds3TwgAAAAAKNQPC4xw0neFIBTlQxdV70gqZt5");
 define("SECRETKEY","6Lds3TwgAAAAAJ4COSMW0wRcnfeAG1bqPlxhLm1V");
 define("DOMAIN",$_SERVER["HTTP_HOST"]);
+

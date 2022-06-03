@@ -15,6 +15,7 @@
         private $login;
         private $tentativas;
         private $session;
+        private $mail;
         
         public function __construct()
         {
@@ -22,6 +23,7 @@
             $this->password=new ClassPassword();
             $this->login=new ClassLogin();
             $this->session=new ClassSessions();
+            $this->mail=new ClassMail();
         }
 
         public function getErro()
@@ -204,6 +206,16 @@
                     "erros"=>$this->getErro()
                 ];
             }else{
+                $this->mail->sendMail(
+                    $arrVar['email'],
+                    $arrVar['nome'],
+                    $arrVar['token'],
+                    "Confirmação de cadastro",
+                    "
+                    <strong>Cadastro do Sistema de Agendamentoo de Consultas</strong><br>
+                    Confirme seu email <a href='".DIRPAGE."agendamento/controllers/controllerConfirmacao/{$arrVar['email']}/{$arrVar['token']}'>Clicando aqui</a>
+                    "
+                );
                 $arrResponse=[
                     "retorno"=>"success",
                     "erros"=>null

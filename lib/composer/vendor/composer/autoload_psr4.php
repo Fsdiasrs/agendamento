@@ -9,6 +9,7 @@ return array(
     'ZxcvbnPhp\\' => array($vendorDir . '/bjeavons/zxcvbn-php/src'),
     'Traits\\' => array($baseDir . '/../../traits'),
     'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
+    'PHPMailer\\PHPMailer\\' => array($vendorDir . '/phpmailer/phpmailer/src'),
     'Models\\' => array($baseDir . '/../../model'),
     'Classes\\' => array($baseDir . '/../../class'),
 );
