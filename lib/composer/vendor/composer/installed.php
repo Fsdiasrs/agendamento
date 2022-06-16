@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '50c0661b6b8a2324c7a246521cfb8514e87d6f84',
+        'reference' => '9c4ee44b18a3a296a0c44592ab0be290f3aea04e',
         'name' => 'pi3a/login',
         'dev' => true,
     ),
@@ -20,12 +20,12 @@
             'dev_requirement' => false,
         ),
         'phpmailer/phpmailer' => array(
-            'pretty_version' => 'v6.6.0',
-            'version' => '6.6.0.0',
+            'pretty_version' => 'v6.6.2',
+            'version' => '6.6.2.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../phpmailer/phpmailer',
             'aliases' => array(),
-            'reference' => 'e43bac82edc26ca04b36143a48bde1c051cfd5b1',
+            'reference' => 'b52ed06864fdda81b82ec8bf564cf15d45ed4f95',
             'dev_requirement' => false,
         ),
         'pi3a/login' => array(
@@ -34,7 +34,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '50c0661b6b8a2324c7a246521cfb8514e87d6f84',
+            'reference' => '9c4ee44b18a3a296a0c44592ab0be290f3aea04e',
             'dev_requirement' => false,
         ),
         'symfony/polyfill-mbstring' => array(
