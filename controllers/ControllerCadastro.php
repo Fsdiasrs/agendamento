@@ -1,6 +1,5 @@
 <?php
-include ("../config/config.php");
-$validate=new Classes\ClassValidate();
+$validate= new Classes\ClassValidate();
 $validate->validateFields($_POST);
 $validate->validateEmail($email);
 $validate->validateIssetEmail($email);
@@ -10,6 +9,3 @@ $validate->validateConfSenha($senha, $senhaConf);
 $validate->validateStrongSenha($senha);
 $validate->validateCaptcha($gRecaptchaResponse);
 echo $validate->validateFinalCad($arrVar);
-var_dump($validate->getErro());
-
-?>

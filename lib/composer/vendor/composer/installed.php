@@ -5,8 +5,8 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '9ce0c2ffb4dab44bdda9288d7731d9d330d34acc',
-        'name' => 'pi3a/agendamento_consultas',
+        'reference' => '50c0661b6b8a2324c7a246521cfb8514e87d6f84',
+        'name' => 'pi3a/login',
         'dev' => true,
     ),
     'versions' => array(
@@ -28,23 +28,14 @@
             'reference' => 'e43bac82edc26ca04b36143a48bde1c051cfd5b1',
             'dev_requirement' => false,
         ),
-        'pi3a/agendamento_consultas' => array(
+        'pi3a/login' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '9ce0c2ffb4dab44bdda9288d7731d9d330d34acc',
+            'reference' => '50c0661b6b8a2324c7a246521cfb8514e87d6f84',
             'dev_requirement' => false,
-        ),
-        'squizlabs/php_codesniffer' => array(
-            'pretty_version' => '3.6.2',
-            'version' => '3.6.2.0',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../squizlabs/php_codesniffer',
-            'aliases' => array(),
-            'reference' => '5e4e71592f69da17871dba6e80dd51bce74a351a',
-            'dev_requirement' => true,
         ),
         'symfony/polyfill-mbstring' => array(
             'pretty_version' => 'v1.26.0',

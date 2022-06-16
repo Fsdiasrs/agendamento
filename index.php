@@ -1,10 +1,9 @@
-<?php include("config/config.php"); ?>
-<?php include(DIRREQ."lib/html/header.php"); ?>
-<?php include(DIRREQ."helpers/variables.php");  ?>
+<?php
+header("Content-Type: text/html; charset=utf-8");
+include("config/config.php");
+include(DIRREQ."helpers/variables.php");
+$dispatch=new Classes\ClassDispatch();
+include($dispatch->getInclusao());
+?>
 
-    <a href   = "<?php echo DIRPAGE.'views/cadastro.php';  ?>">Cadastro</a><br>
-    <a href   = "<?php echo DIRPAGE.'views/login.php';  ?>">Login</a><br>
-    <a href   = "<?php echo DIRPAGE.'views/user';?>">Calendário do Usuário</a><br>
-    <a href   = "<?php echo DIRPAGE.'views/manager';?>">Calendário do Manager</a>
 
-<?php include(DIRREQ."lib/html/footer.php"); ?>

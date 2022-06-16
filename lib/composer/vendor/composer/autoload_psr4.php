@@ -10,6 +10,6 @@ return array(
     'Traits\\' => array($baseDir . '/../../traits'),
     'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
     'PHPMailer\\PHPMailer\\' => array($vendorDir . '/phpmailer/phpmailer/src'),
-    'Models\\' => array($baseDir . '/../../model'),
-    'Classes\\' => array($baseDir . '/../../class'),
+    'Models\\' => array($baseDir . '/../../models'),
+    'Classes\\' => array($baseDir . '/../../classes'),
 );

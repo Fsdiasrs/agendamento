@@ -1,24 +1,21 @@
 {
-    "name"                : "pi3a/agendamento_consultas",
-    "description"         : "Aplicação desenvolvida para a disciplina de Projeto Integrador III-A em PHP e MySQL.",
+    "name": "pi3a/login",
+    "description": "Sistema de Login em php.",
     "authors": [
         {
-            "name"        : "Fabio Silva Dias",
-            "email"       : "fabio.dias@sou.ucpel.edu.br"
+            "name": "fabiosdiasrs",
+            "email": "fabiosdiasrs@gmail.com"
         }
     ],
-    "require"             : {
+    "require": {
         "bjeavons/zxcvbn-php": "^1.0",
         "phpmailer/phpmailer": "^6.6"
     },
-    "autoload": {
-        "psr-4": {
-            "Classes\\"   : "../../class",
-            "Models\\"    : "../../model",
-            "Traits\\"    : "../../traits"
+    "autoload":{
+        "psr-4":{
+            "Classes\\":"../../classes/",
+            "Models\\":"../../models/",
+            "Traits\\":"../../traits/"
         }
-    },
-    "require-dev": {
-        "squizlabs/php_codesniffer": "^3.6"
     }
 }
