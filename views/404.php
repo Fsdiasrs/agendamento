@@ -7,6 +7,7 @@
     <title>Página não encontrada</title>
 </head>
 <body>
+<input class="float w100 h40" type="hidden" id="g-recaptcha-response" name="g-recaptcha-response" required>
     <h1>Página não encontrada!</h1>
 </body>
 </html>
