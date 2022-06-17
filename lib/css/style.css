@@ -6,11 +6,12 @@
     font-family   : Arial, Helvetica, sans-serif;
 }
 
-.loginFormulario a{
+.topFaixa a{
     text-decoration: none;
-    color: #333;
+    color: #fff;
+    margin-left: 100px;
+    text-align: right;
 }
-
 
 /*Classes auxiliares*/
 .float{float: left;}
@@ -148,3 +149,16 @@ input[type='submit']:hover{
     }    
 }
 
+
+
+/*Calendario*/
+.loginFormulario a{
+    text-decoration: none;
+    color: #333;
+}
+
+.calendar{
+    width: 80%;
+    margin: 30px auto;
+    height: 80vh;
+}

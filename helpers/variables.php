@@ -21,3 +21,4 @@ $arrVar = [
     "dataCriacao" => $dataCriacao,
     "token" => $token,
 ];
+

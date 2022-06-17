@@ -270,12 +270,19 @@ class ClassValidate
         }else{
             $this->login->deleteAttempt();
             $this->session->setSessions($email);
-
-            $arrResponse=[
-                "retorno"=>"success",
-                "page"=>'areaRestrita',
-                "tentativas"=>$this->tentativas
-            ];
+            if ($this->login->getDataUser($email)['data']['permissoes'] == "user") {
+                $arrResponse=[
+                    "retorno"=>"success",
+                    "page"=>'calendarUser',
+                    "tentativas"=>$this->tentativas
+                ];
+            } else {
+                $arrResponse=[
+                    "retorno"=>"success",
+                    "page"=>'calendarManager',
+                    "tentativas"=>$this->tentativas
+                ];
+            }
         }
 
         return json_encode($arrResponse);
