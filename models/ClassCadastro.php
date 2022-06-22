@@ -16,7 +16,7 @@ class ClassCadastro extends ClassCrud{
                 $arrVar['hashSenha'],
                 $arrVar['dataNascimento'],
                 $arrVar['cpf'],
-                $arrVar['dataCreate'],
+                $arrVar['dataCriacao'],
                 'user',
                 'confirmation'
             )

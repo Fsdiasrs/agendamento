@@ -235,7 +235,7 @@ class ClassValidate
                 "erros"=>$this->getErro()
             ];
         }else{
-            $this->mail->sendMail(
+           /*  $this->mail->sendMail(
                 $arrVar['email'],
                 $arrVar['nome'],
                 $arrVar['token'],
@@ -244,7 +244,7 @@ class ClassValidate
                 <strong>Cadastro App Agendamento de Consultas</strong><br>
                 Confirme seu email <a href='".DIRPAGE."controllers/controllerConfirmation/{$arrVar['email']}/{$arrVar['token']}'>Clicando aqui</a>
                 "
-            );
+            ); */
             $arrResponse=[
                 "retorno"=>"success",
                 "page"=>'login',
@@ -274,12 +274,14 @@ class ClassValidate
                 $arrResponse=[
                     "retorno"=>"success",
                     "page"=>'calendarUser',
+                    "permitions"=>'permissoes',
                     "tentativas"=>$this->tentativas
                 ];
             } else {
                 $arrResponse=[
                     "retorno"=>"success",
                     "page"=>'calendarManager',
+                    "permitions"=>'permissoes',
                     "tentativas"=>$this->tentativas
                 ];
             }

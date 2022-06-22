@@ -1,6 +1,7 @@
 <?php
 include ("../config/config.php");
 $objEvents=new \Classes\ClassEvents();
+$permition=filter_input(INPUT_POST,'permition',FILTER_DEFAULT);
 $date=filter_input(INPUT_POST,'date',FILTER_DEFAULT);
 $time=filter_input(INPUT_POST,'time',FILTER_DEFAULT);
 $title=filter_input(INPUT_POST,'title',FILTER_DEFAULT);
@@ -15,4 +16,9 @@ $objEvents->createEvent(
     $start->format("Y-m-d H:i:s"),
     $start->modify('+'.$horasAtendimento.'minutes')->format("Y-m-d H:i:s")
 );
-echo "<script> window.history.back();</script>";
+
+if ($permition == "user") {
+    echo "<script>alert('Dados adicionados com sucesso!'); location = '".DIRPAGE."calendarUser';</script>";
+} else {
+    echo "<script>alert('Dados adicionados com sucesso!'); location = '".DIRPAGE."calendarManager';</script>";
+}

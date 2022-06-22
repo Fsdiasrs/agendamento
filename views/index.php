@@ -4,3 +4,4 @@
     <a href="<?php echo DIRPAGE.'cadastro';?>">Cadastro</a><br>
     <a href="<?php echo DIRPAGE.'login';?>">Login</a>
 <?php \Classes\ClassLayout::setFooter(); ?>
+
