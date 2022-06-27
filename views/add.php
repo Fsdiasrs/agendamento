@@ -1,6 +1,7 @@
 <?php include("../config/config.php"); ?>
 <?php \Classes\ClassLayout::setHeadRestrito("user"); ?>
 <?php \Classes\ClassLayout::setHead('Grade de Horários','Selecione seu horário.',''); ?>
+<?php \Classes\ClassLayout::setMenu(); ?>
 
 <?php $date=new \DateTime($_GET['date'], new \DateTimeZone('America/Sao_Paulo'));?>
 <div class="topFaixa float w100 center">

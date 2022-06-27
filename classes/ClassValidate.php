@@ -111,7 +111,7 @@ class ClassValidate
     #Validação se a data é igual a data do banco de dados
     public function validateDataNascimento($dataNascimento,$email)
     {
-        $dataDb=$this->login->getDataUser($email)["data"]["dataNascimento"];
+        $dataDb                                           = $this->login->getDataUser($email)["data"]["dataNascimento"];
         if($dataNascimento == $dataDb){
             return true;
         }else{
@@ -235,16 +235,16 @@ class ClassValidate
                 "erros"=>$this->getErro()
             ];
         }else{
-           /*  $this->mail->sendMail(
+            $this->mail->sendMail(
                 $arrVar['email'],
                 $arrVar['nome'],
                 $arrVar['token'],
                 "Confirmação de Cadastro",
                 "
                 <strong>Cadastro App Agendamento de Consultas</strong><br>
-                Confirme seu email <a href='".DIRPAGE."controllers/controllerConfirmation/{$arrVar['email']}/{$arrVar['token']}'>Clicando aqui</a>
+                Confirme seu email <a href                = '".DIRPAGE."controllers/controllerConfirmation/{$arrVar['email']}/{$arrVar['token']}'>Clicando aqui</a>
                 "
-            ); */
+            );
             $arrResponse=[
                 "retorno"=>"success",
                 "page"=>'login',
@@ -306,7 +306,7 @@ class ClassValidate
                 "Link para redefinição de Senha",
                 "
                 <strong>Redefinação da Senha</strong><br>
-                Redefina sua senha <a href='".DIRPAGE."redefinicaoSenha/{$arrVar['email']}/{$arrVar['token']}'>clicando aqui</a>.
+                Redefina sua senha <a href                = '".DIRPAGE."redefinicaoSenha/{$arrVar['email']}/{$arrVar['token']}'>clicando aqui</a>.
                 "
             );
             $arrResponse=[

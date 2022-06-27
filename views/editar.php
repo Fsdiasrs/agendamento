@@ -1,6 +1,7 @@
 <?php include("../config/config.php"); ?>
 <?php \Classes\ClassLayout::setHeadRestrito("manager"); ?>
 <?php \Classes\ClassLayout::setHead('Editar Horários','Edite o horário.',''); ?>
+<?php \Classes\ClassLayout::setMenu(); ?>
 
 <?php    
     $objEvents=new \Classes\ClassEvents();
@@ -18,12 +19,13 @@
             <input type="date" name="date" id="date" class="form-control m10" value="<?php echo $date->format("Y-m-d"); ?>" required>
             <input type="time" name="time" id="time" class="form-control m10" value="<?php echo $date->format("H:i"); ?>" required>
             <select class="form-select m10" name="horasAtendimento" id="horasAtendimento" require>
-              <option value="">Selecione</option>
-              <option value="15">15 min</option>
-              <option value="30">30 min</option>
-              <option value="45">45 min</option>
-              <option value="60">60 min</option>
+                <option value="">Selecione</option>
+                <option value="15">15_min</option>
+                <option value="30">30_min</option>
+                <option value="45">45_min</option>
+                <option value="60">60_min</option>
             </select>
+            
             <input type="radio" id="sim" name="fav_language" value="1">
             <label for="html">Sim</label><br>
             <input type="radio" id="nao" name="fav_language" value="0" checked>

@@ -94,13 +94,10 @@ class CLassSessions{
                     echo "
                     <script>
                         alert('Você não tem acesso a este conteúdo!');
-                        window.location.href='".DIRPAGE."areaRestrita';
+                        window.location.href='".DIRPAGE."calendarUser';
                     </script>
-                ";
-                } else {
-                    # code...
-                }
-                
+                    ";
+                }                
             } else {
                 $this->destructSessions();
                 echo "
