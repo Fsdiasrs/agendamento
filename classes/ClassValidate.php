@@ -88,9 +88,7 @@ class ClassValidate
                 $this->setErro("Email não cadastrado!");
                 return false;
             }
-            
         }
-        
     }
 
     #Validação se o dado é uma data
@@ -235,7 +233,7 @@ class ClassValidate
                 "erros"=>$this->getErro()
             ];
         }else{
-            $this->mail->sendMail(
+            /* $this->mail->sendMail(
                 $arrVar['email'],
                 $arrVar['nome'],
                 $arrVar['token'],
@@ -244,7 +242,36 @@ class ClassValidate
                 <strong>Cadastro App Agendamento de Consultas</strong><br>
                 Confirme seu email <a href                = '".DIRPAGE."controllers/controllerConfirmation/{$arrVar['email']}/{$arrVar['token']}'>Clicando aqui</a>
                 "
-            );
+            ); */
+            $arrResponse=[
+                "retorno"=>"success",
+                "page"=>'login',
+                "erros"=>null
+            ];
+            $this->cadastro->insertCad($arrVar);
+        }
+        return json_encode($arrResponse);
+    }
+    
+    #Validação final do cadastroComplementar
+    public function validateFinalCadCompl($arrVar)
+    {
+        if(count($this->getErro())>0){
+            $arrResponse=[
+                "retorno"=>"erro",
+                "erros"=>$this->getErro()
+            ];
+        }else{
+            /* $this->mail->sendMail(
+                $arrVar['email'],
+                $arrVar['nome'],
+                $arrVar['token'],
+                "Confirmação de Cadastro",
+                "
+                <strong>Cadastro App Agendamento de Consultas</strong><br>
+                Confirme seu email <a href                = '".DIRPAGE."controllers/controllerConfirmation/{$arrVar['email']}/{$arrVar['token']}'>Clicando aqui</a>
+                "
+            ); */
             $arrResponse=[
                 "retorno"=>"success",
                 "page"=>'login',

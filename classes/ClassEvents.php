@@ -3,27 +3,29 @@ namespace Classes;
 
 use Models\ClassConect;
 
+
 class ClassEvents extends ClassConect
 {
     #Trazer os dados de eventos do banco
-    public function getEvents()
-    {
-        $b=$this->conectDB()->prepare("select * from events");
-        $b->execute();
-        $f=$b->fetchAll(\PDO::FETCH_ASSOC);
+
+    public function getEvents(){
+        $obsEvents = new \Models\ClassCrud();
+        $b = $obsEvents->selectAllDB("*","events",array());
+        $f = $b->fetchAll(\PDO::FETCH_ASSOC);
         return json_encode($f);
     }
 
     #Criação da consulta no banco
-    public function createEvent($id=0,$title,$description,$color='blue',$start,$end)
+    public function createEvent($id=0,$id_usuario,$title,$description,$color='blue',$start,$end)
     {
-        $b=$this->conectDB()->prepare("insert into events values (?,?,?,?,?,?)");
+        $b=$this->conectDB()->prepare("insert into events values (?,?,?,?,?,?,?)");
         $b->bindParam(1, $id, \PDO::PARAM_INT);
-        $b->bindParam(2, $title, \PDO::PARAM_STR);
-        $b->bindParam(3, $description, \PDO::PARAM_STR);
-        $b->bindParam(4, $color, \PDO::PARAM_STR);
-        $b->bindParam(5, $start, \PDO::PARAM_STR);
-        $b->bindParam(6, $end, \PDO::PARAM_STR);
+        $b->bindParam(2, $id_usuario, \PDO::PARAM_INT);
+        $b->bindParam(3, $title, \PDO::PARAM_STR);
+        $b->bindParam(4, $description, \PDO::PARAM_STR);
+        $b->bindParam(5, $color, \PDO::PARAM_STR);
+        $b->bindParam(6, $start, \PDO::PARAM_STR);
+        $b->bindParam(7, $end, \PDO::PARAM_STR);
         $b->execute();
     }
 

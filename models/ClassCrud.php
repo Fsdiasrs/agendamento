@@ -18,6 +18,15 @@ class ClassCrud extends ClassConect{
         $this->prepareExecute("select {$fields} from {$table} {$where}" , $exec);
         return $this->crud;
     }
+    
+
+    #Seleção de dados
+    public function selectAllDB($fields , $table , $exec)
+    {
+        $this->prepareExecute("select {$fields} from {$table}" , $exec);
+        return $this->crud;
+    }
+   
 
     #Inserção de dados
     public function insertDB($table , $values , $exec)

@@ -25,6 +25,7 @@ class ClassLayout{
         $html.="  <link rel='stylesheet' href='".DIRJS."FullCalendar/main.min.css'>\n";
         $html.="  <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor' crossorigin='anonymous'>\n";
         $html.="  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>\n";
+        $html.="  <link href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css' rel='stylesheet'>\n";
         $html.="</head>\n\n";
         $html.="<body>\n";
         echo $html;
@@ -70,6 +71,9 @@ class ClassLayout{
         $html.="  <script src='".DIRJS."sweetalert2.all.min.js'></script>\n";
         $html.="  <script src='https://www.google.com/recaptcha/api.js?render=".SITEKEY."'></script>\n";
         $html.="  <script src='".DIRJS."javascript.js'></script>\n";
+        $html.="<script src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'></script>\n";
+        $html.="<script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>\n";
+        $html.="<script src='http://localhost/agendamento/lib/js/custom.js'></script>\n";
         $html.="</body>\n";
         $html.="</html>";
         echo $html;

@@ -8,13 +8,27 @@
     $events=$objEvents->getEventsById($_GET['id']);
     $date=new \DateTime($events['start']);
     $permition=$_SESSION['permition'];
+    /* var_dump($events); */
+    
 ?>
-    <div class="topFaixa float w100 center">Confirmação de Consulta</div>
+
+<?php 
+  $objUsuario = new \Models\ClassCrud();
+  $b = $objUsuario->selectDB("*","users","where id=?",array($events['id_usuario']));
+  $f = $b->fetch(\PDO::FETCH_ASSOC);
+  $r = $b->rowCount();
+  $usuario = [
+    "dados"=>$f,
+    "rows"=>$r
+  ];
+  /* var_dump($usuario); */
+  ?>
+    <div class="topFaixa float w100 center mb-3">Confirmação de Consulta</div>
     <form name="formEdit" id="formEdit" method="post" action="<?php echo DIRPAGE.'controllers/ControllerEdit.php'; ?>">
         <div class="container-sm">
             <input type="hidden" name="id" id="id" class="form-control m10" value="<?php echo $_GET['id']; ?>">
             <input type="hidden" name="permition" id="permition" class="form-control m10" value="<?php echo $permition; ?>">
-            <input type="text" name="title" id="title" class="form-control m10" value="<?php echo $events['title']; ?>" required>
+            <input type="text" name="title" id="title" class="form-control m10" value="<?php echo $usuario['dados']['nome']; ?>" required>
             <input type="text" name="description" id="description" class="form-control m10" value="<?php echo $events['description']; ?>" required>
             <input type="date" name="date" id="date" class="form-control m10" value="<?php echo $date->format("Y-m-d"); ?>" required>
             <input type="time" name="time" id="time" class="form-control m10" value="<?php echo $date->format("H:i"); ?>" required>

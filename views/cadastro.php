@@ -4,7 +4,7 @@
 <div class="topFaixa float w100 center">
     Cadastro de Pacientes
 </div>
-<div class="retornoCad float w100 center"></div>
+<div class="retornoCad float w100 center" id="retornoCad"></div>
 <form name="formCadastro" id="formCadastro" action="<?php echo DIRPAGE.'controllers/controllerCadastro'; ?>" method="post">
     <div class="cadastro float center">
         <input class="form-control float w100 h40" type="text" id="nome" name="nome" placeholder="Nome:" required>
