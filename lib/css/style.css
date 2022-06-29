@@ -22,20 +22,13 @@
 .w100{width: 100%;}
 .h40{height: 40px;}
 .h30{height: 30px;}
-
 .center{text-align: center;}
 
-.cadastro input{width: 60%; margin: 15px 20%;}
 
 .topFaixa{height: 50px; background: #025158; font-weight: bold; color: #fff; line-height: 50px;}
 
 .resultadoForm{margin-top: 20px; font-weight: bold; color:red; line-height: 20px;}
 
-/*Extra-small*/
-.cadastro input{width: 90%; margin: 15px 5%;}
-
-/*Small*/
-.cadastro input{width: 80%; margin: 15px 10%;}
 
 /*Configurações Gerais*/
 .calendarUser, .calendarManager{
@@ -76,9 +69,9 @@ input[type='submit']:hover{
 }
 
  .fundo{
-    position: absolute;
-    top: 0;
-    left: 0;
+     position: absolute;
+     top: 0;
+     left: 0;
     width: 100%;
     height: 100%;
     background: url('/login/img/fundoL.jpg') center center no-repeat;
@@ -110,6 +103,9 @@ input[type='submit']:hover{
     line-height: 20px;
 }
 
+.container .cadastro .mb-3 .form-control #cpf{
+    width: 50%;
+}
 
 
 /*Extra small*/
@@ -118,18 +114,18 @@ input[type='submit']:hover{
         width: 70%;
     }
     
-     .login{
+    .login{
         width: 90%;
     }
      .login .loginFormulario .loginTextos{
-        width: 100%;
+         width: 100%;
         margin-top: 10px;
         text-align: left;
     }
-
+    
     .cadastro{width: 90%; margin: 15px 5%;}
     .calendarUser, .calendarManager{
-      width: 90%;
+        width: 90%;
       margin-top: 10px;
       text-align: left;
     }
@@ -152,13 +148,15 @@ input[type='submit']:hover{
 
 /*Medium*/
 @media screen and (min-width: 769px) and (max-width: 1199px){
-   
+    
     .login{
         width: 60%;
     }    
+    .cadastro input{width: 60%; margin: 15px 20%;}
 }
 
 .m10{
     margin-top: 10px;
     margin-bottom: 10px;
 }
+

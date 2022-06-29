@@ -48,7 +48,6 @@ class ClassLayout{
         $html .= "          </a>";
         $html .= "          <ul class='dropdown-menu' aria-labelledby='navbarDropdown'>";
         $html .= "            <li><a class='dropdown-item' href='".DIRPAGE."cadastro'>Cadastro</a></li>";
-        $html .= "            <li><a class='dropdown-item' href='".DIRPAGE."cadastroComplementar'>Cadastro Complementar</a></li>";
         $html .= "            <li><hr class='dropdown-divider'></li>";
         $html .= "            <li><a class='dropdown-item' href='".DIRPAGE."controllers/controllerLogout'>Sair</a></li>";
         $html .= "          </ul>";
@@ -73,7 +72,6 @@ class ClassLayout{
         $html.="  <script src='".DIRJS."javascript.js'></script>\n";
         $html.="<script src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'></script>\n";
         $html.="<script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>\n";
-        $html.="<script src='http://localhost/agendamento/lib/js/custom.js'></script>\n";
         $html.="</body>\n";
         $html.="</html>";
         echo $html;

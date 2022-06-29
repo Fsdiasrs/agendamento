@@ -2,6 +2,7 @@
 $validate= new Classes\ClassValidate();
 $validate->validateFields($_POST);
 $validate->validateEmail($email);
+$validate->validateEmail($emailEmp);
 $validate->validateIssetEmail($email);
 $validate->validateData($dataNascimento);
 $validate->validateCpf($cpf);

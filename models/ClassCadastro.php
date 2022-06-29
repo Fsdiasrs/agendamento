@@ -8,7 +8,7 @@ class ClassCadastro extends ClassCrud{
     {
         $this->insertDB(
         "users",
-        "?,?,?,?,?,?,?,?,?",
+        "?,?,?,?,?,?,?,?,?,?,?,?,?,?,?",
             array(
                 0,
                 $arrVar['nome'],
@@ -18,7 +18,13 @@ class ClassCadastro extends ClassCrud{
                 $arrVar['cpf'],
                 $arrVar['dataCriacao'],
                 'user',
-                'confirmation'
+                'confirmation',
+                $arrVar['telefoneResid'],
+                $arrVar['celular'],
+                $arrVar['empresa'],
+                $arrVar['emailEmp'],
+                $arrVar['telefoneEmp'],
+                $arrVar['planoSaude']
             )
         );
 

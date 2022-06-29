@@ -15,7 +15,7 @@
             </div>
             <span id="resultado_pesquisa"></span>
             <div class="mb-3">
-            <input type="text" name="id_usuario" id="id_usuario" class="form-control" required>
+            <input type="hidden" name="id_usuario" id="id_usuario" class="form-control" required>
             </div>
             <div class="mb-3">
             <input type="text" name="description" id="description" class="form-control" placeholder="Sintomas" aria-describedby="helpId" required>
@@ -42,4 +42,5 @@
             </button>
         </div>
       </form>
+    <script src='http://localhost/agendamento/lib/js/custom.js'></script>
 <?php \Classes\ClassLayout::setFooter(); ?>

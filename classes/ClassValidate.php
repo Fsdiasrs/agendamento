@@ -233,7 +233,7 @@ class ClassValidate
                 "erros"=>$this->getErro()
             ];
         }else{
-            /* $this->mail->sendMail(
+            $this->mail->sendMail(
                 $arrVar['email'],
                 $arrVar['nome'],
                 $arrVar['token'],
@@ -242,7 +242,7 @@ class ClassValidate
                 <strong>Cadastro App Agendamento de Consultas</strong><br>
                 Confirme seu email <a href                = '".DIRPAGE."controllers/controllerConfirmation/{$arrVar['email']}/{$arrVar['token']}'>Clicando aqui</a>
                 "
-            ); */
+            );
             $arrResponse=[
                 "retorno"=>"success",
                 "page"=>'login',
