@@ -33,7 +33,13 @@ class ClassLogin extends ClassCrud{
             "rows"=>$r
         ];
     }
-
+    
+    /**
+     * getDataUserById
+     * Retorna os dados do usuário pelo id
+     * @param  string $id
+     * @return string
+     */
     public function getDataUserById($id)
     {
         $b=$this->selectDB(
@@ -52,16 +58,66 @@ class ClassLogin extends ClassCrud{
         ];
     }
 
-    #Retorna os dados do usuário pelo nome
-    public function getDataUserByName($nome)
+        
+    /**
+     * getDataAllUserByName
+     * Retorna todos os usuários com o nome indicado
+     * @param  string $nome
+     * @return string vetor
+     */
+    public function getDataAllUserByName($nome)
     {
+        $valor= "%".$nome."%";
         $b=$this->selectDB(
             "*",
             "users",
             "where nome like ?",
             array(
-                $nome
+                $valor
             )
+        );
+        $f=$b->fetchAll(\PDO::FETCH_ASSOC);
+        $r=$b->rowCount();
+        return $arrData=[
+            "data"=>$f,
+            "rows"=>$r
+        ];
+    }
+
+    /**
+     * getDataAllUserByName
+     * Retorna todos os usuários com o nome indicado
+     * @param  string $nome
+     * @return string vetor
+     */
+    public function getDataAllUserByNameIdEmail($data)
+    {
+        
+        $b=$this->selectDB(
+            "*",
+            "users",
+            "where nome like %?% or id like %?% or email like %?%",
+            array(
+                $data
+            )
+        );
+        $f=$b->fetchAll(\PDO::FETCH_ASSOC);
+        $r=$b->rowCount();
+        return $arrData=[
+            "data"=>$f,
+            "rows"=>$r
+        ];
+    }
+
+    #Retorna os dados de todos os usuários
+    public function getDataAllUser()
+    {
+        $b=$this->selectDB(
+            "*",
+            "users",
+            "",
+            array(             
+)
         );
         $f=$b->fetchAll(\PDO::FETCH_ASSOC);
         $r=$b->rowCount();

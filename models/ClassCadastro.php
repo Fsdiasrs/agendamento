@@ -31,6 +31,25 @@ class ClassCadastro extends ClassCrud{
         $this->insConfirmation($arrVar);
     }
 
+    #Realizará a inserção no banco de dados
+    public function updateCad($arrVarUser,$id)
+    {
+        $b=$this->conectDB()->prepare("update users set email=?, dataNascimento=?, cpf=?, telefoneResid=?, celular=?, empresa=?, emailEmp=?, telefoneEmp=?, planoSaude=? where id=?");
+
+        $b->bindParam(1, $arrVarUser['email'], \PDO::PARAM_STR);
+        $b->bindParam(2, $arrVarUser['dataNascimento'], \PDO::PARAM_STR);
+        $b->bindParam(3, $arrVarUser['cpf'], \PDO::PARAM_STR);
+        $b->bindParam(4, $arrVarUser['telefoneResid'], \PDO::PARAM_STR);
+        $b->bindParam(5, $arrVarUser['celular'], \PDO::PARAM_STR);
+        $b->bindParam(6, $arrVarUser['empresa'], \PDO::PARAM_STR);
+        $b->bindParam(7, $arrVarUser['emailEmp'], \PDO::PARAM_STR);
+        $b->bindParam(8, $arrVarUser['telefoneEmp'], \PDO::PARAM_STR);
+        $b->bindParam(9, $arrVarUser['planoSaude'], \PDO::PARAM_STR);
+        $b->bindParam(10, $id, \PDO::PARAM_INT);
+        $b->execute();
+
+    }
+
     #Inserção de confirmação
     public function insConfirmation($arrVar)
     {
@@ -129,5 +148,14 @@ class ClassCadastro extends ClassCrud{
         }else{
             return false;
         }
+    }
+
+    public function deleteCadastro($id)
+    {
+            $this->deleteDB(
+                "users",
+                "id=?",
+                array($id)
+            );
     }
 }

@@ -2,13 +2,27 @@
 namespace Classes;
 
 class ClassLayout{
-
+    
+    /**
+     * setHeadRestrito
+     * Define restrição de acesso a determinadas páginas do sistema
+     * @param  string $permition
+     * @return void
+     */
     public static function setHeadRestrito($permition){
         $session=new CLassSessions();
         $session->verifyInsideSession($permition);
     }
     
-    #Setar as tags do head
+    
+    /**
+     * setHead
+     * Setar as tags do head   
+     * @param  string $title
+     * @param  string $description
+     * @param  string $author
+     * @return void
+     */
     public static function setHead($title , $description , $author='Fábio Silva Dias')
     {
         $html="<!doctype html>\n";
@@ -30,11 +44,16 @@ class ClassLayout{
         $html.="<body>\n";
         echo $html;
     }
-
+    
+    /**
+     * setMenu
+     * Retorna o Navbar
+     * @return void
+     */
     public static function setMenu()
     {
-        $html  = "<div class='container'>";
-        $html .= "<nav class='navbar navbar-expand-lg navbar-light bg-light'>";
+
+        $html = "<nav class='navbar navbar-expand-lg navbar-light bg-light'>";
         $html .= "  <div class='container-fluid'>";
         $html .= "    <a class='navbar-brand' href='#'>Agendamento de Consultas</a>";
         $html .= "    <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>";
@@ -47,7 +66,9 @@ class ClassLayout{
         $html .= "            Menu";
         $html .= "          </a>";
         $html .= "          <ul class='dropdown-menu' aria-labelledby='navbarDropdown'>";
+        $html .= "            <li><a class='dropdown-item' href='".DIRPAGE."controllers/controllerCalendar'>Calendário</a></li>";
         $html .= "            <li><a class='dropdown-item' href='".DIRPAGE."cadastro'>Cadastro</a></li>";
+        $html .= "            <li><a class='dropdown-item' href='".DIRPAGE."dadosPaciente'>Buscar usuário</a></li>";
         $html .= "            <li><hr class='dropdown-divider'></li>";
         $html .= "            <li><a class='dropdown-item' href='".DIRPAGE."controllers/controllerLogout'>Sair</a></li>";
         $html .= "          </ul>";
@@ -56,11 +77,15 @@ class ClassLayout{
         $html .= "    </div>";
         $html .= "  </div>";
         $html .= "</nav>";
-        $html .= "</div>";
         echo $html;
     }
 
-    #Setar as tags do footer
+      
+    /**
+     * setFooter
+     * Setar as tags do footer 
+     * @return void
+     */
     public static function setFooter()
     {
         $html ="  <script src='".DIRJS."zepto.min.js'></script>\n";

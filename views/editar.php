@@ -25,14 +25,14 @@ $b=$objPaciente->getDataUserById($events['id_usuario']);
         <input type="date" name="date" id="date" class="form-control m10" value="<?php echo $date->format("Y-m-d"); ?>" required>
         <input type="time" name="time" id="time" class="form-control m10" value="<?php echo $date->format("H:i"); ?>" required>
         <select class="form-select m10" name="horasAtendimento" id="horasAtendimento" require>
-            <option value="">Selecione</option>
+            <option value="">Selecione tempo de consulta</option>
             <option value="15">15_min</option>
             <option value="30">30_min</option>
             <option value="45">45_min</option>
             <option value="60">60_min</option>
         </select>
         <div class="m10">
-            <p>Compareceu</p>
+            <p>Compareceu a consulta</p>
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1">
                 <label class="form-check-label" for="inlineRadio1">Sim</label>
@@ -60,10 +60,10 @@ $b=$objPaciente->getDataUserById($events['id_usuario']);
 <script>
         document.getElementById('confirmar').addEventListener('click', async function(){
             Swal.fire(
-              'Good job!',
-              'You clicked the button!',
+              'Sucesso!',
+              'Consulta Confirmada',
               'success'
             )
-        })
+        });
 </script>
 <?php \Classes\ClassLayout::setFooter(); ?>

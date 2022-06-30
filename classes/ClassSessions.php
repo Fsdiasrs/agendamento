@@ -119,4 +119,21 @@ class CLassSessions{
             unset($_SESSION[$key]);
         }
     }
+
+    public function selectCalendar($permition)
+    {
+        if($permition == 'user'){
+            echo "
+                <script>
+                    window.location.href='".DIRPAGE."calendarUser';
+                </script>
+            ";
+        }elseif($permition == 'manager'){
+            echo "
+            <script>
+                window.location.href='".DIRPAGE."calendarManager';
+            </script>
+        ";
+        }
+    }
 }

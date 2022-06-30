@@ -46,8 +46,8 @@
     <script>
         document.getElementById('marcar').addEventListener('click', async function(){
             Swal.fire(
-              'Good job!',
-              'You clicked the button!',
+              'Sucesso',
+              'Consulta Confirmada',
               'success'
             )
         })

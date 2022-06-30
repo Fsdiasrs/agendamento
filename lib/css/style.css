@@ -10,6 +10,12 @@
     font-family   : 'Poppins', sans-serif;
 }
 
+.container .box-search{
+display: flex;
+justify-content: center;
+gap: .1%;
+}
+
 .topFaixa a{
     text-decoration: none;
     color: #fff;
@@ -96,7 +102,7 @@ input[type='submit']:hover{
 
 }
 
-.resultadoForm, .retornoCad, .retornoSen{
+.resultadoForm, .retornoCad, .retornoSen, .retornoEditCad{
     margin-top: 20px;
     font-weight: bold;
     color: red;

@@ -31,4 +31,4 @@ if($_POST['inlineRadioOptions'] == 1){
 }
 
 
-/* echo "<script>alert('Dados editados com sucesso!'); location = '".DIRPAGE."calendarManager';</script>"; */
+echo "<script> location = '".DIRPAGE."calendarManager';</script>";
