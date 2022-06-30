@@ -13,6 +13,13 @@ if (isset($_POST['empresa'])) {$empresa = filter_input(INPUT_POST, 'empresa', FI
 if (isset($_POST['emailEmp'])) {$emailEmp = filter_input(INPUT_POST, 'emailEmp', FILTER_SANITIZE_EMAIL);} else { $emailEmp = null;}
 if (isset($_POST['telefoneEmp'])) {$telefoneEmp = filter_input(INPUT_POST, 'telefoneEmp', FILTER_SANITIZE_SPECIAL_CHARS);} else { $telefoneEmp = null;}
 if (isset($_POST['planoSaude'])) {$planoSaude = filter_input(INPUT_POST, 'planoSaude', FILTER_SANITIZE_SPECIAL_CHARS);} else { $planoSaude = null;}
+if (isset($_POST['date'])) {$date = filter_input(INPUT_POST, 'date', FILTER_SANITIZE_SPECIAL_CHARS);} else { $date = null;}
+if (isset($_POST['id'])) {$idConsulta = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_SPECIAL_CHARS);} else { $idConsulta = null;}
+if (isset($_POST['id_usuario'])) {$id = filter_input(INPUT_POST, 'id_usuario', FILTER_SANITIZE_SPECIAL_CHARS);} else { $id = null;}
+if (isset($_POST['title'])) {$title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_SPECIAL_CHARS);} else { $title = null;}
+if (isset($_POST['description'])) {$description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_SPECIAL_CHARS);} else { $description = null;}
+if (isset($_POST['time'])) {$time = filter_input(INPUT_POST, 'time', FILTER_SANITIZE_SPECIAL_CHARS);} else { $time = null;}
+if (isset($_POST['horasAtendimento'])) {$horasAtendimento = filter_input(INPUT_POST, 'horasAtendimento', FILTER_SANITIZE_SPECIAL_CHARS);} else { $horasAtendimento = null;}
 
 if (isset($_POST['token'])) {$token = $_POST['token'];} else { $token = bin2hex(random_bytes(64));}
 if (isset($_POST['g-recaptcha-response'])) {$gRecaptchaResponse = $_POST['g-recaptcha-response'];} else { $gRecaptchaResponse = null;}
@@ -26,11 +33,30 @@ $arrVar = [
     "hashSenha" => $hashSenha,
     "dataCriacao" => $dataCriacao,
     "telefoneResid" => $telefoneResid,
+    "emailEmp" => $emailEmp,
     "celular" => $celular,
     "empresa" => $empresa,
-    "emailEmp" => $emailEmp,
     "telefoneEmp" => $telefoneEmp,
     "planoSaude" => $planoSaude,
-    "token" => $token,
+    "token" => $token
+];
+
+$arrVarFunc = [
+    "telefoneResid" => $telefoneResid,
+    "celular" => $celular,
+    "empresa" => $empresa,
+    "telefoneEmp" => $telefoneEmp,
+    "planoSaude" => $planoSaude
+];
+
+$arrVarEvents = [
+    "emailEmp" => $emailEmp,
+    "date" => $date,
+    "id" => $idConsulta,
+    "id_usuario" => $id,
+    "title" => $title,
+    "description" => $description,
+    "time" => $time,
+    "horasAtendimento" => $horasAtendimento
 ];
 

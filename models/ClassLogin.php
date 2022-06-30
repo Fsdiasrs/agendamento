@@ -34,7 +34,25 @@ class ClassLogin extends ClassCrud{
         ];
     }
 
-    #Retorna os dados do usuário
+    public function getDataUserById($id)
+    {
+        $b=$this->selectDB(
+            "*",
+            "users",
+            "where id=?",
+            array(
+                $id
+            )
+        );
+        $f=$b->fetch(\PDO::FETCH_ASSOC);
+        $r=$b->rowCount();
+        return $arrData=[
+            "data"=>$f,
+            "rows"=>$r
+        ];
+    }
+
+    #Retorna os dados do usuário pelo nome
     public function getDataUserByName($nome)
     {
         $b=$this->selectDB(

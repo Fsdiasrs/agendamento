@@ -21,7 +21,7 @@ $objEvents->createEvent(
 );
 
 if ($permition == "user") {
-    echo "<script>alert('Dados adicionados com sucesso!'); location = '".DIRPAGE."calendarUser';</script>";
+    echo "<script> location = '".DIRPAGE."calendarUser';</script>";
 } else {
-    echo "<script>alert('Dados adicionados com sucesso!'); location = '".DIRPAGE."calendarManager';</script>";
+    echo "<script>location = '".DIRPAGE."calendarManager';</script>";
 }

@@ -43,4 +43,13 @@
         </div>
       </form>
     <script src='http://localhost/agendamento/lib/js/custom.js'></script>
+    <script>
+        document.getElementById('marcar').addEventListener('click', async function(){
+            Swal.fire(
+              'Good job!',
+              'You clicked the button!',
+              'success'
+            )
+        })
+    </script>
 <?php \Classes\ClassLayout::setFooter(); ?>

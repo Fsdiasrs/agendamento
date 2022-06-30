@@ -27,3 +27,4 @@ define("SECRETKEY","6LcJhWUgAAAAAD3rvwLJ_Lswn1ah2pii-XHgBej8");
 define("DOMAIN",$_SERVER["HTTP_HOST"]);
 
 include(DIRREQ."lib/composer/vendor/autoload.php");
+include(DIRREQ."helpers/variables.php");

@@ -39,14 +39,15 @@ class ClassEvents extends ClassConect
     }
 
     #Update no banco de dados
-    public function updateEvent($title,$description,$start,$end,$id)
+    public function updateEvent($id_usuario,$title,$description,$start,$end,$id)
     {
-        $b=$this->conectDB()->prepare("update events set title=?, description=?, start=?, end=? where id=?");
-        $b->bindParam(1, $title, \PDO::PARAM_STR);
-        $b->bindParam(2, $description, \PDO::PARAM_STR);
-        $b->bindParam(3, $start, \PDO::PARAM_STR);
-        $b->bindParam(4, $end, \PDO::PARAM_STR);
-        $b->bindParam(5, $id, \PDO::PARAM_INT);
+        $b=$this->conectDB()->prepare("update events set id_usuario=?, title=?, description=?, start=?, end=? where id=?");
+        $b->bindParam(1, $id_usuario, \PDO::PARAM_INT);
+        $b->bindParam(2, $title, \PDO::PARAM_STR);
+        $b->bindParam(3, $description, \PDO::PARAM_STR);
+        $b->bindParam(4, $start, \PDO::PARAM_STR);
+        $b->bindParam(5, $end, \PDO::PARAM_STR);
+        $b->bindParam(6, $id, \PDO::PARAM_INT);
         $b->execute();
     }
 

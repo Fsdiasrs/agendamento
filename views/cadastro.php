@@ -5,12 +5,13 @@
     Cadastro de Pacientes
 </div>
 <div class="retornoCad float w100 center" id="retornoCad"></div>
-<form name="formCadastro" id="formCadastro" action="<?php echo DIRPAGE . 'controllers/controllerCadastro'; ?>" method="post">
-    <div class="container">
+<div class="container">
+    <form name="formCadastro" id="formCadastro" action="<?php echo DIRPAGE . 'controllers/controllerCadastro'; ?>" method="post">
+
         <div class="cadastro float center">
             <h5>Dados do Paciente</h5>
             <div class="mb-3 float w100 h40">
-                <input type="text" class="form-control" name="nome" id="nome" aria-describedby="helpId" placeholder="Nome">
+                <input type="text" class="form-control" name="nome" id="nome" aria-describedby="helpId" placeholder="Nome" required>
             </div>
             <div class="mb-3 float w100 h40">
                 <input class="form-control" type="email" id="email" name="email" placeholder="Email:" required>
@@ -46,10 +47,11 @@
             <div class="mb-3 float w100 h40">
                 <input class="form-control" type="text" id="planoSaude" name="planoSaude" placeholder="Plano de saúde:" required>
             </div>
-            <input class="float w100 h40" type="hidden" id="g-recaptcha-response" name="g-recaptcha-response" required>
+            <input class="float w100 h40" type="text" id="g-recaptcha-response" name="g-recaptcha-response" required>
             <input class="inlineBlock h40" type="submit" value="Cadastrar">
         </div>
-    </div>
-</form>
+
+    </form>
+</div>
 
 <?php \Classes\ClassLayout::setFooter(); ?>

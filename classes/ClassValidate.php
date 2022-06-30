@@ -182,10 +182,10 @@ class ClassValidate
     }
 
     #Verifica se o captcha está correto
-    public function validateCaptcha($captcha, $score      = 0.5)
+    public function validateCaptcha($captcha, $score      = 0.2)
     {
-        $return                                           = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".SECRETKEY."&response={$captcha}");
-        $response                                         = json_decode($return);
+        $return = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".SECRETKEY."&response={$captcha}");
+        $response = json_decode($return);
         if ($response->success == true && $response->score >= $score) {
             return true;
         } else {
@@ -248,13 +248,14 @@ class ClassValidate
                 "page"=>'login',
                 "erros"=>null
             ];
-            $this->cadastro->insertCad($arrVar);
+            /* $this->cadastro->insertCad($arrVar); */
         }
         return json_encode($arrResponse);
     }
     
-    #Validação final do cadastroComplementar
-    public function validateFinalCadCompl($arrVar)
+    
+
+    public function confirmaConsulta($arrVarEvents)
     {
         if(count($this->getErro())>0){
             $arrResponse=[
@@ -262,22 +263,23 @@ class ClassValidate
                 "erros"=>$this->getErro()
             ];
         }else{
-            /* $this->mail->sendMail(
-                $arrVar['email'],
-                $arrVar['nome'],
-                $arrVar['token'],
-                "Confirmação de Cadastro",
+            $this->mail->sendMail(
+                $arrVarEvents['emailEmp'],
+                $arrVarEvents['title'],
+                $arrVarEvents['token'],
+                "Confirmação de Consulta",
                 "
-                <strong>Cadastro App Agendamento de Consultas</strong><br>
-                Confirme seu email <a href                = '".DIRPAGE."controllers/controllerConfirmation/{$arrVar['email']}/{$arrVar['token']}'>Clicando aqui</a>
+                <strong>Confirmação de Consulta</strong><br>
+                Confirmamos que o funcionário(a) {$arrVarEvents['title']}, compareceu ao HUSFP para uma consulta na data de {$arrVarEvents['date']}<br>
+                 e teve uma consulta de {$arrVarEvents['horasAtendimento']} minutos.
                 "
-            ); */
+            );
             $arrResponse=[
                 "retorno"=>"success",
                 "page"=>'login',
                 "erros"=>null
             ];
-            $this->cadastro->insertCad($arrVar);
+        
         }
         return json_encode($arrResponse);
     }
