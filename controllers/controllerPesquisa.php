@@ -13,8 +13,11 @@ if (!empty($title)) {
         "data"=>$f,
         "rows"=>$r
     ];
-   
-    $retorna = ['erro' => false, 'dados' => $usuario['data']];    
+    if($usuario['rows'] == 0){
+        $retorna = ['erro'=>true, 'msg'=>"Usuário não cadastrado, realize cadastro antes de marcar consultas!"];
+    }else{
+        $retorna = ['erro' => false, 'dados' => $usuario['data']];    
+    }
 } else {
     $retorna = ['erro' => true, 'msg' => "Erro: Nenhum usuário encontrado!"];
 }

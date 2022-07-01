@@ -1,6 +1,6 @@
 <?php include("../config/config.php"); ?>
 <?php \Classes\ClassLayout::setHeadRestrito("user"); ?>
-<?php \Classes\ClassLayout::setHead('Grade de Horários','Selecione seu horário.',''); ?>
+<?php \Classes\ClassLayout::setHead('Grade de Horários','Selecione seu horário.','Fábio Silva Dias'); ?>
 <?php \Classes\ClassLayout::setMenu(); ?>
 
 <?php $date=new \DateTime($_GET['date'], new \DateTimeZone('America/Sao_Paulo'));?>
@@ -43,13 +43,4 @@
         </div>
       </form>
     <script src='http://localhost/agendamento/lib/js/custom.js'></script>
-    <script>
-        document.getElementById('marcar').addEventListener('click', async function(){
-            Swal.fire(
-              'Sucesso',
-              'Consulta Confirmada',
-              'success'
-            )
-        })
-    </script>
 <?php \Classes\ClassLayout::setFooter(); ?>
