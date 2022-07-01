@@ -5,6 +5,7 @@
 
 <?php
 $objEvents = new \Classes\ClassEvents();
+$id=filter_input(INPUT_GET,"id",FILTER_SANITIZE_NUMBER_INT);
 $events = $objEvents->getEventsById($_GET['id']);
 $date = new \DateTime($events['start']);
 $permition = $_SESSION['permition'];
@@ -16,7 +17,7 @@ $b=$objPaciente->getDataUserById($events['id_usuario']);
 <div class="topFaixa float w100 center mb-3">Confirmação de Consulta</div>
 <form name="formEdit" id="formEdit" method="post" action="<?php echo DIRPAGE . 'controllers/ControllerEdit.php'; ?>">
     <div class="container-sm">
-        <input type="hidden" name="id" id="id" class="form-control m10" value="<?php echo $_GET['id']; ?>">
+        <input type="hidden" name="id" id="id" class="form-control m10" value="<?php echo $id; ?>">
         <input type="hidden" name="permition" id="permition" class="form-control m10" value="<?php echo $permition; ?>">
         <input type="hidden" name="id_usuario" id="id_usuario" class="form-control m10"  value="<?php echo $events['id_usuario']; ?> ">
         <input type="text" name="emailEmp" id="emailEmp" class="form-control m10"  value="<?php echo $b['data']['emailEmp']; ?> ">
@@ -47,7 +48,7 @@ $b=$objPaciente->getDataUserById($events['id_usuario']);
             </span>
             <span class="title">Confirmar</span>
         </button>
-        <a id="delete" class="btn btn-outline-danger" href="<?php echo DIRPAGE . 'controllers/ControllerDelete.php?id=' . $_GET['id']; ?>">
+        <a id="delete" class="btn btn-outline-danger" href="<?php echo DIRPAGE . 'controllers/ControllerDelete.php?id=' . $id; ?>">
             <span class="icon">
                 <ion-icon name="trash-outline"></ion-icon>
             </span>

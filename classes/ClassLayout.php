@@ -55,7 +55,7 @@ class ClassLayout{
 
         $html = "<nav class='navbar navbar-expand-lg navbar-light bg-light'>";
         $html .= "  <div class='container-fluid'>";
-        $html .= "    <a class='navbar-brand' href='#'>Agendamento de Consultas</a>";
+        $html .= "    <a class='navbar-brand' href='".DIRPAGE."controllers/controllerCalendar'>Agendamento de Consultas</a>";
         $html .= "    <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>";
         $html .= "      <span class='navbar-toggler-icon'></span>";
         $html .= "    </button>";

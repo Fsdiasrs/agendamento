@@ -152,10 +152,24 @@ class ClassCadastro extends ClassCrud{
 
     public function deleteCadastro($id)
     {
+        $b=$this->selectDB(
+            "*",
+            "users",
+            "where id=?",
+            array(
+                $id
+            )
+        );
+        $r=$b->rowCount();
+        if($r >0){
             $this->deleteDB(
                 "users",
                 "id=?",
                 array($id)
             );
+            return true;
+        }else{
+            return false;
+        }
     }
 }

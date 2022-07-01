@@ -48,7 +48,7 @@
                 <input class="form-control" type="text" id="planoSaude" name="planoSaude" placeholder="Plano de saúde:" required>
             </div>
             <input class="float w100 h40" type="hidden" id="g-recaptcha-response" name="g-recaptcha-response" required>
-            <input class="inlineBlock h40" type="submit" value="Cadastrar">
+            <input id="cadastrar" class="inlineBlock h40" type="submit" value="Cadastrar">
         </div>
 
     </form>
