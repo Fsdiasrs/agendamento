@@ -2,14 +2,14 @@
 <?php \Classes\ClassLayout::setMenu(); ?>
 
 <div class="topFaixa float w100 center">
-    Cadastro de Pacientes
+    Cadastro de Usuários
 </div>
 <div class="retornoCad float w100 center" id="retornoCad"></div>
 <div class="container">
     <form name="formCadastro" id="formCadastro" action="<?php echo DIRPAGE . 'controllers/controllerCadastro'; ?>" method="post">
 
         <div class="cadastro float center">
-            <h5>Dados do Paciente</h5>
+            <h5>Dados do Usuário</h5>
             <div class="mb-3 float w100 h40">
                 <input type="text" class="form-control" name="nome" id="nome" aria-describedby="helpId" placeholder="Nome" required>
             </div>

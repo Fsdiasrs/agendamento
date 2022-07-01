@@ -14,7 +14,6 @@ class ClassLayout{
         $session->verifyInsideSession($permition);
     }
     
-    
     /**
      * setHead
      * Setar as tags do head   
@@ -69,11 +68,15 @@ class ClassLayout{
         $html .= "            <li><a class='dropdown-item' href='".DIRPAGE."controllers/controllerCalendar'>Calendário</a></li>";
         $html .= "            <li><a class='dropdown-item' href='".DIRPAGE."cadastro'>Cadastro</a></li>";
         $html .= "            <li><a class='dropdown-item' href='".DIRPAGE."dadosPaciente'>Buscar usuário</a></li>";
-        $html .= "            <li><hr class='dropdown-divider'></li>";
-        $html .= "            <li><a class='dropdown-item' href='".DIRPAGE."controllers/controllerLogout'>Sair</a></li>";
         $html .= "          </ul>";
         $html .= "        </li>";
         $html .= "      </ul>";
+        $html .= "      <div class='form-inline my-2 my-lg-0'>";
+        $html .= "          <label class = 'me-3'>".$_SESSION['name']."</label>";
+        $html .= "      </div>";
+        $html .= "      <div class='form-inline my-2 my-lg-0'>";
+        $html .= "          <a class='dropdown-item' href='".DIRPAGE."controllers/controllerLogout'>SAIR</a>";
+        $html .= "      </div>";
         $html .= "    </div>";
         $html .= "  </div>";
         $html .= "</nav>";
