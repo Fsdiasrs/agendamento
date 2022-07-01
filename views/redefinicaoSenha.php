@@ -1,3 +1,4 @@
+<?php \Classes\ClassLayout::setHeadRestrito("user"); ?>
 <?php \Classes\ClassLayout::setHead('Redefinição de Senha', 'Redefina sua senha!'); ?>
 
 <div class="topFaixa float w100 center">

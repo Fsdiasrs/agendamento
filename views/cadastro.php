@@ -1,3 +1,4 @@
+<?php \Classes\ClassLayout::setHeadRestrito("user"); ?>
 <?php \Classes\ClassLayout::setHead('Cadastro', 'Realize seu cadastro em nosso sistema.'); ?>
 <?php \Classes\ClassLayout::setMenu(); ?>
 
